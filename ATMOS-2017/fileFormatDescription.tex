@@ -1,0 +1,42 @@
+\documentclass[11pt,paper=a4]{article}
+
+\usepackage{csquotes}
+
+
+\begin{document}
+
+
+\section*{Data Format Description: Mobility Offer Instances}
+
+In the following, a description of an input data format for
+mobility offer problems is given.
+All indices are zero based, i.e the index~0 refers to the first element of a list.
+The value~$-1$ for an index encodes that an optional index is not present.
+The input data is provided in a plain text file
+with the file ending \enquote{{\bf .mo.input}} that consists of:
+
+\begin{itemize}
+	\item One line containing two natural numbers
+		  separated by single spaces:
+		\begin{itemize}
+			\item \emph{nmbVehicles} The number of vehicles
+			\item \emph{nmbDemands} The number of demands
+		\end{itemize}
+
+	\item \emph{nmbDemands} subsequent lines each describing a mobility demand.
+		The first number of each line specifies the \emph{order date} of the demand.
+		The second number of each line specifies the \emph{number of mobility offers}~$n$ for the mobility demand.
+		It is followed by $n$~five-tuples of numbers, specifying
+		\emph{cost},
+		\emph{interval start},
+		\emph{interval end},
+		\emph{due date},
+		and a \emph{vehicle index}.
+		The vehicle index is optional, i.e. it might be~$-1$.
+\end{itemize}
+
+
+\end{document}
+
+
+
